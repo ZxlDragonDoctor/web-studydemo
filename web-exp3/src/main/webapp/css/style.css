@@ -1,0 +1,44 @@
+@CHARSET "UTF-8";
+body,div,ul{
+    margin:0;
+    padding:0;
+}
+p{text-align:center;}
+a:link{
+    color:blue;
+    text-decoration:none;
+}
+a:hover{
+    background-color:gray;
+}
+.container {
+    width:1004px;
+    margin:0 auto;
+}
+.header {
+    margin-bottom:5px;
+}
+.topmenu {
+    margin-bottom:5px;
+}
+.mainContent {
+    margin:0 0 5px 0;
+}
+.leftmenu {
+    float:left; width:120px;
+    padding:5px 0 5px 30px;
+}
+.leftmenu ul{
+    list-style:none;
+}
+.leftmenu p{
+    margin:0 0 10px 0;
+}
+.content {
+    float:left; width:700px;
+}
+.footer {
+    clear:both;
+    height:60px;
+    align-content: center;
+}
