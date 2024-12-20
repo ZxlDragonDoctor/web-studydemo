@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--构造器注入-->
+    <bean id="country" class="com.zxl.webspring.webspring.eneity.Country">
+        <constructor-arg name="name" value="中国"/>
+        <constructor-arg name="codeName" value="CHN"/>
+    </bean>
+<!--    set方法注入-->
+    <bean id="passenger" class="com.zxl.webspring.webspring.eneity.Passenger">
+        <!-- <constructor-arg name="name" value="张大海"/> -->
+        <!-- <constructor-arg name="country" ref="country"/> -->
+        <property name="name" value="张大海"/>
+        <property name="country" ref="country"/>
+    </bean>
+
+<!--    静态工厂方法注入-->
+<!--    <bean name="robot" class="com.zxl.webspring.webspring.eneity.RobotFactory"-->
+<!--          factory-method="StaticcreateRobot" destroy-method="shutDown"/>-->
+<!--    非静态方法注入-->
+    <bean name="robotFactory" class="com.zxl.webspring.webspring.eneity.RobotFactory"/>
+    <bean name="robot" factory-bean="robotFactory"
+          factory-method="NoStaticcreateRobot"/>
+<!--    外部jar依赖注入-->
+    <bean id="executorService" class="java.util.concurrent.Executors"
+          factory-method="newCachedThreadPool"
+          destroy-method="shutdown"/>
+</beans>
