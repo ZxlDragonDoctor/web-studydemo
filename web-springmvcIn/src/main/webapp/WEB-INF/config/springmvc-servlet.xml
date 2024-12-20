@@ -52,4 +52,9 @@
         </mvc:interceptor>
     </mvc:interceptors>
 
+<!--    文件上传的multipart resolver-->
+    <bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver">
+        <property name="resolveLazily" value="false"/>
+        <property name="strictServletCompliance" value="false"/>
+    </bean>
 </beans>

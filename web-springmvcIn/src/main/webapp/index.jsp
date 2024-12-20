@@ -13,5 +13,11 @@
 <hr>
 <a href="login">controllerLogin</a><br>
 <a href="login.jsp">ServletLogin</a>
+<hr>
+<h3>两种文件上传方式</h3>
+<a href="uploadFile.jsp">partFileUpload</a><br>
+<a href="commonsFileUpload/input-product">commonsFileUpload</a>
+<h3>四种文件下载方式</h3>
+<a href="dowonload.jsp">dowonload</a>
 </body>
 </html>

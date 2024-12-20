@@ -15,6 +15,18 @@
             <param-value>/WEB-INF/config/springmvc-servlet.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
+<!--文件传配置-->
+        <multipart-config>
+            <!-- 临时文件的目录，该目录必须存在 -->
+<!--            location>D:\book</location>：这个元素指定了上传文件的临时存储目录。
+服务器需要将这个目录设置为存在且可写的，以便上传的文件可以被临时保存在这里，然后再移动到最终的存储位置。-->
+            <location>D:\book</location>
+            <!-- 上传文件最大字节2M -->
+            <max-file-size>2097152</max-file-size>
+            <!-- 上传文件整个请求不超过4M -->
+            <max-request-size>4194304</max-request-size>
+        </multipart-config>
+
     </servlet>
     <servlet-mapping>
         <servlet-name>springmvc</servlet-name>
@@ -22,9 +34,9 @@
     </servlet-mapping>
 
     <!--配置会话超时时间-->
-    <session-config>
-        <session-timeout>15</session-timeout> <!-- 会话超时时间，单位为分钟 -->
-    </session-config>
+<!--    <session-config>-->
+<!--        <session-timeout>15</session-timeout> &lt;!&ndash; 会话超时时间，单位为分钟 &ndash;&gt;-->
+<!--    </session-config>-->
 <!--    注册filter-->
 <!--        <filter>-->
 <!--            <filter-name>characterEncodingFilter</filter-name>-->

@@ -9,14 +9,15 @@ import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.List;
 
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Product implements Serializable {
+public class Product1 implements Serializable {
     private Integer id;
     private String name;
     private String brand;
     private BigDecimal price;
+
+    private List<MultipartFile> images; //商品图片
 
 }
