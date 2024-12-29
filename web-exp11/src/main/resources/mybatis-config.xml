@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <!-- 配置日志实现，注意这里应该是小写的 'log4j' 而不是 'L0G4J' -->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+<!--     开启驼峰映射-->
+        <setting name="mapUnderscoreToCamelCase" value="true"/>
+
+    </settings>
+    <environments default="development">
+        <!-- 配置MyBatis运行环境 -->
+        <environment id="development">
+            <!-- 使用JDBC的提交和回滚来管理事务 -->
+            <transactionManager type="JDBC"/>
+            <!-- 支持JDBC数据源连接池 -->
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/elearning"/>
+                <property name="username" value="root"/>
+                <property name="password" value="zxl123"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <!-- 告诉MyBatis到哪里去找PoJo类的映射文件 -->
+    <mappers>
+        <mapper resource="mappers/StudentMapper.xml"/>
+    </mappers>
+</configuration>
